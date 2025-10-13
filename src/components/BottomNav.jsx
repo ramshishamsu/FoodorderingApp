@@ -6,8 +6,9 @@ export default function BottomNav() {
   const cartCount = useSelector(s => s.cart.items.reduce((a, c) => a + c.qty, 0));
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 shadow-md z-50 md:relative md:bottom-auto md:flex md:justify-center">
-      <div className="flex justify-around py-3 md:gap-10 md:py-4 max-w-2xl mx-auto">
+    <nav className="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 shadow-md z-50 md:relative md:bottom-auto md:flex md:flex-col md:items-center">
+      {/* Navigation icons */}
+      <div className="flex justify-around py-3 md:gap-10 md:py-4 max-w-2xl w-full mx-auto">
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -48,6 +49,11 @@ export default function BottomNav() {
           <User size={24} />
           <span className="mt-1 hidden md:inline">Account</span>
         </NavLink>
+      </div>
+
+      {/* Footer text */}
+      <div className="w-full text-center text-gray-500 text-xs py-1 md:py-2">
+        © 2025. All rights reserved
       </div>
     </nav>
   );
